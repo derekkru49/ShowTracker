@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ShowTracker — your personal streaming watchlist." />
+    <title>ShowTracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="ShowTracker home">
+          <span class="brand-mark"><i></i><i></i><i></i></span>
+          <span>Show<span>Tracker</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Primary navigation">
+          <button class="nav-link active">My shows</button>
+          <button class="nav-link" data-toast="Discover is coming next">Discover</button>
+          <button class="nav-link" data-toast="Calendar is coming next">Calendar</button>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.35-.02-.69-.06-1.03A7 7 0 0 1 13.03 3.06C12.69 3.02 12.35 3 12 3Z"/></svg>
+          </button>
+          <button class="avatar" aria-label="Open profile">DS</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <p class="eyebrow">YOUR PERSONAL WATCHLIST</p>
+            <h1>Pick up where you<br /><span>left off.</span></h1>
+            <p class="hero-copy">Keep every show, episode, and streaming service in one beautifully simple place.</p>
+          </div>
+          <div class="hero-stat" aria-label="Weekly watching progress">
+            <div class="ring"><span><strong id="weeklyCount">5</strong><small>episodes<br />this week</small></span></div>
+            <p><strong>Nice pace!</strong><br />2 more than last week</p>
+          </div>
+        </section>
+
+        <section class="controls" aria-label="Show controls">
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="searchInput" type="search" placeholder="Search your shows…" autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+          <div class="filter-row" id="statusFilters" aria-label="Filter by status">
+            <button class="pill active" data-status="all">All <span id="allCount">6</span></button>
+            <button class="pill" data-status="watching">Watching <span id="watchingCount">4</span></button>
+            <button class="pill" data-status="up-next">Up next <span id="upNextCount">1</span></button>
+            <button class="pill" data-status="finished">Finished <span id="finishedCount">1</span></button>
+          </div>
+          <button class="add-btn" id="addShowBtn"><span>＋</span> Add show</button>
+        </section>
+
+        <section class="service-strip">
+          <span class="service-label">STREAMING ON</span>
+          <div id="serviceFilters" class="service-filters"></div>
+          <span class="results-count" id="resultsCount"></span>
+        </section>
+
+        <section class="show-grid" id="showGrid" aria-live="polite"></section>
+        <div class="empty-state" id="emptyState" hidden>
+          <div>⌁</div><h2>No shows found</h2><p>Try a different title or filter.</p>
+        </div>
+      </main>
+
+      <footer><span>ShowTracker</span><p>Made for people who always forget the episode number.</p><button data-toast="Your data is saved locally in this browser">Privacy</button></footer>
+    </div>
+
+    <dialog id="showDialog" class="show-dialog"><div id="dialogContent"></div></dialog>
+    <dialog id="addDialog" class="add-dialog">
+      <form id="addForm" method="dialog">
+        <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+        <p class="eyebrow">GROW YOUR WATCHLIST</p><h2>Add a show</h2>
+        <label>Show title<input name="title" required placeholder="What are you watching?" /></label>
+        <div class="form-split"><label>Streaming service<select name="service"><option>Netflix</option><option>Max</option><option>Apple TV+</option><option>Hulu</option><option>Prime Video</option><option>Disney+</option></select></label><label>Total episodes<input name="totalEpisodes" type="number" min="1" value="10" /></label></div>
+        <label>Short description<textarea name="description" placeholder="A quick note about the show…"></textarea></label>
+        <button class="submit-btn" value="default">Add to watchlist</button>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
