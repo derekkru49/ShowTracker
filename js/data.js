@@ -1,0 +1,9 @@
+window.SHOWTRACKER_DATA = [
+  { id: 'neon-divide', title: 'Neon Divide', year: 2026, genre: 'Sci-fi thriller', service: 'Netflix', status: 'watching', season: 2, episode: 4, totalEpisodes: 8, rating: 8.7, poster: 0, description: 'A memory detective hunts a signal that can rewrite the past—and discovers her own life may be fabricated.' },
+  { id: 'salt-and-stone', title: 'Salt & Stone', year: 2025, genre: 'Crime drama', service: 'Max', status: 'watching', season: 1, episode: 6, totalEpisodes: 10, rating: 8.4, poster: 1, description: 'A detective returns to her remote coastal hometown when a decades-old disappearance echoes through a new case.' },
+  { id: 'afterlight', title: 'Afterlight', year: 2026, genre: 'Mystery', service: 'Netflix', status: 'up-next', season: 1, episode: 0, totalEpisodes: 9, rating: 9.1, poster: 2, description: 'Four friends witness an impossible storm—and wake something that has been sleeping beneath their town.' },
+  { id: 'far-side', title: 'The Far Side', year: 2024, genre: 'Science fiction', service: 'Apple TV+', status: 'watching', season: 3, episode: 2, totalEpisodes: 10, rating: 8.9, poster: 3, description: 'The last crew on a lunar research station realizes the silence from Earth is not a communications failure.' },
+  { id: 'the-regent', title: 'The Regent', year: 2025, genre: 'Period drama', service: 'Prime Video', status: 'finished', season: 2, episode: 8, totalEpisodes: 8, rating: 8.5, poster: 4, description: 'Power, duty, and desire collide when an underestimated queen inherits a kingdom on the brink.' },
+  { id: 'table-for-two', title: 'Table for Two', year: 2026, genre: 'Travel · Food', service: 'Hulu', status: 'watching', season: 1, episode: 3, totalEpisodes: 8, rating: 8.2, poster: 5, description: 'A restless chef follows handwritten family recipes through the sun-drenched towns of southern Italy.' }
+];
+
